@@ -1,6 +1,6 @@
 # 🎵 Aplikasi Manajemen Koleksi Musik
 
-Aplikasi Manajemen Koleksi Musik adalah program berbasis Java yang digunakan untuk mengelola daftar lagu favorit pengguna. Proyek ini dibuat sebagai implementasi konsep Struktur Data dan Algoritma dengan menerapkan teknik pencarian, pengurutan, filtering, dan rekursi.
+Aplikasi Manajemen Koleksi Musik adalah program berbasis Golang yang digunakan untuk mengelola daftar lagu favorit pengguna. Proyek ini dibuat sebagai implementasi konsep Struktur Data dan Algoritma dengan menerapkan teknik pencarian, pengurutan, filtering, dan rekursi.
 
 ## 📌 Fitur
 

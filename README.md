@@ -52,7 +52,7 @@ Setiap lagu memiliki atribut:
 1. Clone repository ini
 
 bash
-git clone https://github.com/username/nama-repository.git
+git clone https://github.com/amandapuja/Aplikasi-Manajemen-Koleksi-Musik.git
 
 
 2. Masuk ke folder project

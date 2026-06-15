@@ -28,8 +28,6 @@ Aplikasi Manajemen Koleksi Musik adalah program berbasis Golang yang digunakan u
 
 ## 🗂️ Struktur Data Lagu
 
-Setiap lagu memiliki atribut:
-
 | Atribut | Deskripsi |
 |----------|-----------|
 | Judul | Nama lagu |
@@ -49,33 +47,39 @@ Setiap lagu memiliki atribut:
 
 ## 🚀 Cara Menjalankan
 
-1. Clone repository ini
+1. Clone repository
 
-bash
+```bash
 git clone https://github.com/amandapuja/Aplikasi-Manajemen-Koleksi-Musik.git
-
+```
 
 2. Masuk ke folder project
 
-bash
-cd nama-repository
+```bash
+cd Aplikasi-Manajemen-Koleksi-Musik
+```
 
+3. Jalankan program
 
-3. Compile program
+```bash
+go run main.go
+```
 
-bash
-javac Main.java
+Atau build terlebih dahulu:
 
+```bash
+go build
+```
 
-4. Jalankan program
+Kemudian jalankan executable yang dihasilkan:
 
-bash
-java Main
-
+```bash
+./Aplikasi-Manajemen-Koleksi-Musik
+```
 
 ## 📷 Tampilan Menu
 
-text
+```text
 MENU UTAMA
 
 1. Tambah Lagu
@@ -90,7 +94,7 @@ MENU UTAMA
 10. Cetak Bintang Rating (Rekursif)
 11. Filter Lagu by Genre
 0. Keluar
-
+```
 
 ## 🎓 Tujuan Proyek
 
@@ -98,4 +102,7 @@ Proyek ini dibuat untuk memenuhi tugas mata kuliah Struktur Data dan Algoritma s
 
 ## 👨‍💻 Author
 
-Dikembangkan oleh *Amanda Puja Nur Aini dan Muhammad Raihan Septianto*.
+Dikembangkan oleh:
+
+- Amanda Puja Nur Aini
+- Muhammad Raihan Septianto

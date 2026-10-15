@@ -1,0 +1,55 @@
+# Supabase project configuration for Llamastu.
+# https://supabase.com/docs/guides/local-development/cli/config
+
+project_id = "llamastu"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "storage", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+port = 54322
+major_version = 15
+
+[studio]
+enabled = true
+port = 54323
+
+[storage]
+enabled = true
+file_size_limit = "25MiB"
+
+[auth]
+enabled = true
+site_url = "http://localhost:5173"
+additional_redirect_urls = ["http://localhost:5173", "http://localhost:4173"]
+jwt_expiry = 3600
+enable_signup = true
+
+[auth.email]
+enable_signup = true
+# Turn this off for production if you want instant sign-in without email
+# confirmation. It is on by default so accounts cannot be hijacked.
+enable_confirmations = false
+
+[functions.server]
+# verify_jwt is false because the function performs its own JWT verification
+# with the Supabase admin client, which also lets /health answer without a
+# token while every data route stays protected.
+verify_jwt = false
+entrypoint = "./functions/server/index.tsx"
+
+[functions.push-cron]
+# The scheduled reminder sender. It is invoked on a timer rather than from the
+# browser, authenticates with a shared secret plus the service-role key, and is
+# the only place the VAPID private key is used. Deploy with:
+#   supabase functions deploy push-cron --no-verify-jwt
+# and schedule it (see the command block at the top of functions/push-cron/index.ts).
+verify_jwt = false
+entrypoint = "./functions/push-cron/index.ts"
+
+[analytics]
+enabled = false

@@ -1,0 +1,19 @@
+{
+  "name": "Llamastu — Interactive Learning Platform",
+  "short_name": "Llamastu",
+  "description": "Turn your own course documents into summaries, flashcards, quizzes and playable learning worlds.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#fff5e7",
+  "theme_color": "#fff5e7",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48 64x64",
+      "type": "image/x-icon",
+      "purpose": "any"
+    }
+  ]
+}

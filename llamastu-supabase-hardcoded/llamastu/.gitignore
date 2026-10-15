@@ -1,0 +1,23 @@
+node_modules/
+dist/
+build/
+.cache/
+.env*
+.vite/
+supabase/.temp/
+vite.config.*.timestamp-*
+*.tsbuildinfo
+*-debug.log*
+logs/
+*.log
+.claude-replay.*
+.tmp-*
+/.figma/design-context/
+
+# Platform-managed agentplat state
+/.plugins/
+/.opencode-skills/
+
+.vercel
+.*.mjs
+llamastu/

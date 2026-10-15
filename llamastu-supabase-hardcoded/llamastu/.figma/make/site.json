@@ -1,0 +1,10 @@
+{
+  "description": "An interactive gamified learning platform for students that transforms study materials into engaging quizzes and summaries, enhancing learning efficiency.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

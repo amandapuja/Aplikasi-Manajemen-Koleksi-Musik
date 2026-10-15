@@ -12,6 +12,7 @@ export type Page =
   | "notes"
   | "calendar"
   | "schedule"
+  | "characters"
   | "assistant"
   | "achievements"
   | "settings"

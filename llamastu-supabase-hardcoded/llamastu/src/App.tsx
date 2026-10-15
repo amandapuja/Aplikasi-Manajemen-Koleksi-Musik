@@ -22,6 +22,7 @@ import { StudyAssistant } from "./pages/StudyAssistant"
 import { Materials } from "./pages/Materials"
 import { NotesPage } from "./pages/NotesPage"
 import { SchedulePage } from "./pages/SchedulePage"
+import { CharactersPage } from "./pages/CharactersPage"
 import { SettingsPage } from "./pages/SettingsPage"
 import { Workspace } from "./pages/Workspace"
 import type { AppData, AuthSession, CalendarEvent, Material, Page } from "./types"
@@ -34,6 +35,7 @@ const nav: { page: Page; label: string; icon: Parameters<typeof Icon>[0]["name"]
   { page: "notes", label: "Notes", icon: "edit" },
   { page: "calendar", label: "Calendar", icon: "calendar" },
   { page: "schedule", label: "Timetable", icon: "clock" },
+  { page: "characters", label: "Characters", icon: "user" },
   { page: "assistant", label: "Study Assistant", icon: "spark" },
   { page: "achievements", label: "Achievements", icon: "award" },
   { page: "settings", label: "Settings", icon: "settings" },
@@ -696,6 +698,7 @@ function AppContent({
         ))}
       {page === "notes" && <NotesPage data={data} refresh={refresh} toast={toast} />}
       {page === "schedule" && <SchedulePage data={data} refresh={refresh} toast={toast} />}
+      {page === "characters" && <CharactersPage data={data} refresh={refresh} toast={toast} />}
       {page === "assistant" && <StudyAssistant data={data} toast={toast} />}
       {page === "achievements" && <Achievements data={data} />}
       {page === "settings" && (

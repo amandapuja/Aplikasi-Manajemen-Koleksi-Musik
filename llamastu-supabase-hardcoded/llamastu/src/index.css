@@ -2104,3 +2104,302 @@ canvas { max-width: 100%; }
     margin-top: 10vh;
   }
 }
+
+/* ---- character variants & wardrobe ---------------------------------------- */
+
+.avatar-shoes {
+  position: absolute;
+  bottom: -3px;
+  left: 8px;
+  width: 25px;
+  height: 4px;
+  border-radius: 2px;
+  background: #61402e;
+  z-index: 1;
+}
+.shoes-trail .avatar-shoes { background: #61402e; }
+.shoes-canvas .avatar-shoes { background: #3b4d61; border-bottom: 1.5px solid #ffffff; }
+.shoes-study .avatar-shoes { background: #824733; }
+
+.glasses-round .avatar-glasses { border-radius: 50%; }
+.glasses-square .avatar-glasses { border-radius: 2px; }
+
+.characters-page-layout {
+  display: grid;
+  grid-template-columns: minmax(360px, 440px) 1fr;
+  gap: 24px;
+  align-items: stretch;
+  min-height: 600px;
+}
+
+@media (max-width: 960px) {
+  .characters-page-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.character-stage-card {
+  position: relative;
+  border-radius: 28px;
+  background: linear-gradient(175deg, #c76743 0%, #aa4b2f 50%, #823522 100%);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 540px;
+  box-shadow: 0 12px 40px rgba(130, 53, 34, 0.22);
+}
+
+.character-stage-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 50% 50%, rgba(255, 205, 160, 0.28) 0%, transparent 68%);
+  pointer-events: none;
+}
+
+.character-stage-pedestal {
+  position: absolute;
+  bottom: 44px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  height: 95px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 50% 40%, #f6b57d 0%, #bd5a3f 65%, #7e301b 100%);
+  box-shadow: 0 0 70px rgba(246, 181, 125, 0.75), inset 0 2px 14px rgba(255, 255, 255, 0.35);
+  border: 1.5px solid rgba(255, 225, 190, 0.5);
+}
+
+.character-stage-pedestal::after {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 235, 210, 0.35);
+  pointer-events: none;
+}
+
+.character-stage-avatar {
+  position: absolute;
+  bottom: 96px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  filter: drop-shadow(0 14px 18px rgba(50, 20, 10, 0.35));
+}
+
+.character-wardrobe-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03);
+}
+
+.wardrobe-tabs-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1.5px solid var(--border);
+  padding-bottom: 14px;
+  margin-bottom: 24px;
+}
+
+.wardrobe-tab-arrow {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  flex: none;
+}
+
+.wardrobe-tab-arrow:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.wardrobe-tabs-scroll {
+  display: flex;
+  gap: 22px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  flex: 1;
+  align-items: center;
+}
+
+.wardrobe-tabs-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.wardrobe-tab-btn {
+  background: none;
+  border: none;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 6px 4px;
+  position: relative;
+  white-space: nowrap;
+  transition: color 0.15s ease;
+}
+
+.wardrobe-tab-btn:hover {
+  color: var(--text);
+}
+
+.wardrobe-tab-btn.active {
+  color: #df6f4b;
+  font-weight: 700;
+}
+
+.wardrobe-tab-btn.active::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #df6f4b;
+  border-radius: 3px;
+}
+
+.wardrobe-options-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 32px;
+  min-height: 200px;
+}
+
+.wardrobe-option-card {
+  position: relative;
+  width: 140px;
+  height: 165px;
+  border-radius: 18px;
+  background: #fff8f3;
+  border: 1.5px solid #f2e2d5;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 10px 14px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.dark .wardrobe-option-card {
+  background: #23202e;
+  border-color: #383447;
+}
+
+.wardrobe-option-card:hover {
+  border-color: #df6f4b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(223, 111, 75, 0.12);
+}
+
+.wardrobe-option-card.equipped {
+  border-color: #df6f4b;
+  background: #fff5ee;
+  box-shadow: 0 4px 16px rgba(223, 111, 75, 0.12);
+}
+
+.dark .wardrobe-option-card.equipped {
+  border-color: #df6f4b;
+  background: #2d262d;
+}
+
+.wardrobe-option-tag {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #e57d59;
+  text-transform: capitalize;
+}
+
+.wardrobe-preview-center {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 14px;
+}
+
+.wardrobe-status-text {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #3b2820;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.dark .wardrobe-status-text {
+  color: #ede5e0;
+}
+
+.wardrobe-status-text.equipped {
+  color: #2b1d18;
+}
+
+.dark .wardrobe-status-text.equipped {
+  color: #ffffff;
+}
+
+.wardrobe-info-banner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  border-radius: 16px;
+  background: #fdf2e9;
+  color: #3b2820;
+}
+
+.dark .wardrobe-info-banner {
+  background: #2b2428;
+  color: #ede5e0;
+}
+
+.wardrobe-info-banner svg {
+  color: #a4482c;
+  flex: none;
+}
+
+.wardrobe-info-banner b {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 700;
+  margin-bottom: 2px;
+  color: #3b2820;
+}
+
+.dark .wardrobe-info-banner b {
+  color: #f7ebe1;
+}
+
+.wardrobe-info-banner small {
+  display: block;
+  font-size: 11.5px;
+  color: #7f645a;
+}
+
+.dark .wardrobe-info-banner small {
+  color: #b5a49c;
+}
+

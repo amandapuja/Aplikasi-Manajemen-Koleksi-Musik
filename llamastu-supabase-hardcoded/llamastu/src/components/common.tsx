@@ -109,18 +109,24 @@ export function Progress({ value, label }: { value: number; label?: string }) {
 export function Avatar({
   character,
   large = false,
+  scale,
 }: {
   character?: Partial<Character>
   large?: boolean
+  scale?: number
 }) {
   const outfit = character?.outfit || "peach"
   const hair = character?.hair || "cocoa"
   const hat = character?.hat || "none"
   const backpack = character?.backpack || "canvas"
   const accessory = character?.accessory || "book"
+  const face = character?.face || "bright"
+  const shoes = character?.shoes || "trail"
+  const glasses = character?.glasses || "none"
   return (
     <div
-      className={`avatar ${large ? "avatar-large" : ""} avatar-model-${character?.model ?? "male"} outfit-${outfit} hair-${hair} hat-${hat} backpack-${backpack} accessory-${accessory}`}
+      className={`avatar ${large ? "avatar-large" : ""} avatar-model-${character?.model ?? "male"} outfit-${outfit} hair-${hair} hat-${hat} backpack-${backpack} accessory-${accessory} face-${face} shoes-${shoes} glasses-${glasses}`}
+      style={scale ? { transform: `scale(${scale})`, transformOrigin: "center bottom" } : undefined}
       role="img"
       aria-label={`Character avatar wearing a ${outfit} outfit with ${hair} hair`}
     >
@@ -134,8 +140,9 @@ export function Avatar({
       <div className="avatar-body">
         <span />
       </div>
+      <div className="avatar-shoes" />
       <div className="avatar-backpack" />
-      {character?.glasses && character.glasses !== "none" && <div className="avatar-glasses" />}
+      {glasses !== "none" && <div className="avatar-glasses" />}
       <div className="avatar-accessory" />
     </div>
   )
